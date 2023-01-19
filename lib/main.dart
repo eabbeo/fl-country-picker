@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:fl_country_code_picker/fl_country_code_picker.dart';
+import 'package:selected_country/sign_up.dart';
+//import 'package:selected_country/sign_up.dart';
 
 void main() {
   runApp(const MaterialApp(
-    home: MyApp(),
+    home: SignUp(),
     debugShowCheckedModeBanner: false,
   ));
 }
@@ -76,8 +78,9 @@ class _MyAppState extends State<MyApp> {
             ElevatedButton(
                 onPressed: () {
                   if (countryCode != null) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text(countryCode!.dialCode + phoneNumber.text)));
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        content:
+                            Text(countryCode!.dialCode + phoneNumber.text)));
                   } else {}
                 },
                 child: const Text("Login"))
